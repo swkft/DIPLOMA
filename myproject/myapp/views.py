@@ -20,3 +20,15 @@ def log_in(request):
 
 def sign_up(request):
     return render(request, 'sign_up.html')
+
+
+def blog(request):
+    return render(request, "blog.html")
+
+
+def for_therapist(request):
+    return render(request, "for_therapist.html")
+
+
+def help_center(request):
+    return render(request, "help_center.html")

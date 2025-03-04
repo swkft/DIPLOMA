@@ -32,7 +32,7 @@
             <a href="">Центри допомоги</a>
         </div>
         <div class="navbar-person">
-            <a href="">Зареєструватися</a>
+            <a href="{% url 'sign_up' %}">Зареєструватися</a>
             <a href="{% url 'log_in' %}">Увійти</a>
         </div>
     </nav>
@@ -106,11 +106,11 @@
 
         <div class="footer-pages">
             <h2>Сторінки</h2>
-            <a href="#">Головна</a>
-            <a href="#">Про нас</a>
-            <a href="#">Блог</a>
-            <a href="#">Терапевтам</a>
-            <a href="#">Центри допомоги</a>
+            <a href="{% url 'index' %}">Головна</a>
+            <a href="{% url 'about' %}">Про нас</a>
+            <a href="{% url 'blog' %}">Блог</a>
+            <a href="{% url 'for_therapist' %}">Терапевтам</a>
+            <a href="{% url 'help_center' %}">Центри допомоги</a>
         </div>
 
         <div class="footer-rules">

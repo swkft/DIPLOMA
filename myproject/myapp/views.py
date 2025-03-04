@@ -7,3 +7,16 @@ def index(request):
         return HttpResponse(f.read())
 def index(request):
     return render(request, 'index.html')
+
+
+def about(request):
+    return render(request, 'about.html')
+
+
+
+def log_in(request):
+    return render(request, 'log_in.html')
+
+
+def sign_up(request):
+    return render(request, 'sign_up.html')

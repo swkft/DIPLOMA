@@ -83,6 +83,17 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'mydatabase',  # Назва твоєї бази даних
+#         'USER': 'admin',      # Ім'я користувача
+#         'PASSWORD': '1010111',  # Пароль користувача
+#         'HOST': 'localhost',   # Хост, якщо база локальна
+#         'PORT': '5432',        # Порт PostgreSQL (стандартний порт)
+#     }
+# }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -118,9 +129,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'myapp/static')
+    BASE_DIR / "static",
 ]
 
 

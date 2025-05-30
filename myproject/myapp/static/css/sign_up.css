@@ -1,4 +1,3 @@
-/* static/css/log_in.css */
 :root {
     --primary: #006747;
     --light: #43996f;
@@ -39,23 +38,23 @@ body {
     text-decoration: underline;
 }
 
-.login-container {
+.signup-container {
+    margin-top: 40px;
     background: var(--primary);
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
+    max-width: 500px;
     width: 100%;
     text-align: center;
     color: var(--font);
 }
 
-.login-title {
+.signup-title {
     font-size: 2.2rem;
     margin-bottom: 30px;
 }
 
-/* --- тепер рамка навколо input-group --- */
 .input-group {
     position: relative;
     margin-bottom: 20px;
@@ -66,34 +65,41 @@ body {
     display: flex;
     align-items: center;
     padding: 0 12px;
+    color: var(--dark);
 }
 
 .input-group i {
     font-size: 1.2rem;
     color: var(--dark);
+    flex-shrink: 0;
 }
 
-/* сам інпут без рамки */
-.input-group input {
+.input-group input,
+.input-group select {
     flex: 1;
     border: none;
     background: transparent;
     padding: 0 10px;
     font-size: 1rem;
     color: var(--dark);
+    height: 100%;
+    appearance: none;
 }
 
 .input-group input::placeholder {
     color: #888;
 }
 
-/* іконка show/hide */
+.input-group select:invalid {
+    color: #888;
+    /* для плейсхолдера "Оберіть" */
+}
+
 .toggle-password {
     cursor: pointer;
     z-index: 2;
 }
 
-/* кнопка */
 .btn {
     background: var(--light);
     color: var(--font);
@@ -112,31 +118,64 @@ body {
     background: var(--dark);
 }
 
-/* текст реєстрації */
-.register-text {
+.login-text {
     margin-top: 15px;
     font-size: .95rem;
 }
 
-.register-text a {
+.login-text a {
     color: var(--font);
     text-decoration: none;
 }
 
-.register-text a:hover {
+.login-text a:hover {
     text-decoration: underline;
 }
 
-/* Прибираємо контур і тінь на самому input */
-.input-group input:focus {
+.input-group input:focus,
+.input-group select:focus {
     outline: none;
     box-shadow: none;
 }
 
-/* Якщо хочеш точно нічого не підсвічувалось на контейнері */
 .input-group:focus-within {
     outline: none;
     box-shadow: none;
+}
+
+/* Стилізація select з лейблом */
+.input-group.select {
+    height: 48px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    background: var(--font);
+    color: var(--dark);
+    border: 2px solid var(--dark);
+    border-radius: 10px;
+}
+
+.input-group.select label {
+    font-size: 1rem;
+    margin-right: 10px;
+    white-space: nowrap;
+    color: var(--dark);
+    flex-shrink: 0;
+}
+
+.input-group.select select {
+    height: 100%;
+    background: transparent;
+    font-size: 1rem;
+    border: none;
+    color: var(--dark);
+    padding: 0 10px;
+    flex: 1;
+    appearance: none;
+}
+
+.input-group.select select:focus {
+    outline: none;
 }
 
 .call {
@@ -144,15 +183,38 @@ body {
     max-width: 70px;
     bottom: 30px;
     right: 30px;
+    
 }
 
 .call img {
     width: 100%;
     border-radius: 50%;
-    border:3px solid var(--fonts)
+    border: 3px solid var(--font)
 }
 
 .call:hover {
     transform: scale(1.1);
     transition: 0.3s;
+}
+
+/* Адаптив */
+@media (max-width: 600px) {
+    .signup-container {
+        padding-top: 60px;
+    }
+
+    .input-group.select {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 10px 12px;
+    }
+
+    .input-group.select label {
+        margin-bottom: 5px;
+    }
+
+    .input-group.select select {
+        width: 100%;
+    }
 }

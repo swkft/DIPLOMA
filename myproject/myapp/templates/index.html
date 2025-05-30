@@ -15,84 +15,88 @@
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
 
     <title>MindCore</title>
-
+    <link rel="icon" type="image/x-icon" href="{% static '/image/logo-2.ico' %}">
 </head>
 
 <body>
     <nav class="navbar">
         <div class="logo">
-            <img src="{% static 'image/logo2.svg'%}" alt="logo">
+            <img src="{% static 'image/logo2.svg' %}" alt="logo">
             <h1>Mindcore</h1>
         </div>
         <div class="navbar-menu">
-            <a href="#">Головна</a>
-            <a href="#">Про нас</a>
-            <a href="">Блог</a>
-            <a href="">Терапевтам</a>
-            <a href="">Центри допомоги</a>
+            <a href="{% url 'index' %}">Головна</a>
+            <a href="{% url 'about' %}">Про нас</a>
+            <a href="{% url 'blog' %}">Корисні статті</a>
+            <a href="{% url 'for_therapist' %}">Терапевтам</a>
+            <a href="{% url 'help_center' %}">Події та центри допомоги</a>
         </div>
         <div class="navbar-person">
             <a href="{% url 'sign_up' %}">Зареєструватися</a>
             <a href="{% url 'log_in' %}">Увійти</a>
         </div>
     </nav>
-
-    <section class="hello">
-        <div class="hello-left">
-            <div class="hello-text">
-                <h2>Підберіть психотерапевта, який вас зрозуміє на платформі MindCore:</h2>
+    <main>
+        <section class="hello">
+            <div class="hello-left">
+                <div class="hello-text">
+                    <h2>Підберіть психотерапевта, який вас зрозуміє на платформі MindCore:</h2>
+                </div>
+                <div class="hello-button">
+                    <a href="{% url 'all_therapist' %}">Обрати спеціаліста</a>
+                </div>
             </div>
-            <div class="hello-button">
-                <a href="#">Обрати спеціаліста</a>
-                <a href="#">Усі спеціалісти</a>
+            <div class="hello-right">
+                <img src="{% static 'image/main3.svg' %}" alt="hello">
             </div>
-        </div>
-        <div class="hello-right">
-            <img src="{% static 'image/main3.svg' %}" alt="hello">
-        </div>
-    </section>
-    <section class="opportunity">
-        <article>
-            <h2 data-target="10000">0</h2>
-            <p>сесій проведено</p>
-        </article>
-        <article>
-            <h2 data-target="98">0</h2>
-            <p>відсотків клієнтів мають позитивні враження після першої сесії</p>
-        </article>
-        <article>
-            <h2 data-target="5">0</h2>
-            <p>хвилин - середній час пошуку фахівця</p>
-        </article>
-        <article>
-            <h2 data-target="300">0</h2>
-            <p>перевірених фахівців на платформі</p>
-        </article>
-    </section>
+        </section>
+        <section class="opportunity">
+            <article>
+                <h2 data-target="1000">0</h2>
+                <p>сесій проведено</p>
+            </article>
+            <article>
+                <h2 data-target="98">0</h2>
+                <p>відсотків клієнтів мають позитивні враження після першої сесії</p>
+            </article>
+            <article>
+                <h2 data-target="5">0</h2>
+                <p>хвилин - середній час пошуку фахівця</p>
+            </article>
+            <article>
+                <h2 data-target="200">0</h2>
+                <p>перевірених фахівців на платформі</p>
+            </article>
+        </section>
 
-    <section class="sos">
-        <h2>Екстрені служби</h2>
-        <article>
-            <p>Тяжкі розлади у дітей та дорослих</p>
-            <a href="tel:+380675949446">+38 (067) 594 94 46</a>
-            <a href="tel:+380959136941">+38 (095) 913 69 41</a>
-        </article>
-        <article>
-            <p>Домашнє насильство та гендерна дискримінація</p>
-            <a href="tel:0800500335">0 800 500 335</a>
-            <a href="tel:116123">116 123</a>
-        </article>
-        <article>
-            <p>Національна лінія підтримки для дітей</p>
-            <a href="tel:0800500225">0 800 500 225</a>
-            <a href="tel:116111">116 111</a>
-        </article>
-        <article>
-            <p>Національна лінія запобігання суїцидам 24/7</p>
-            <a href="tel:7333">7333</a>
-        </article>
-    </section>
-
+        <section class="sos">
+            <h2>Екстрені служби</h2>
+            <article>
+                <p>Тяжкі розлади у дітей та дорослих</p>
+                <a href="tel:+380675949446">+38 (067) 594 94 46</a>
+                <a href="tel:+380959136941">+38 (095) 913 69 41</a>
+            </article>
+            <article>
+                <p>Домашнє насильство та гендерна дискримінація</p>
+                <a href="tel:0800500335">0 800 500 335</a>
+                <a href="tel:116123">116 123</a>
+            </article>
+            <article>
+                <p>Національна лінія підтримки для дітей</p>
+                <a href="tel:0800500225">0 800 500 225</a>
+                <a href="tel:116111">116 111</a>
+            </article>
+            <article>
+                <p>Національна лінія запобігання суїцидам 24/7</p>
+                <a href="tel:7333">7333</a>
+            </article>
+        </section>
+        <div class="call">
+            <a href="tel:+380964653870">
+                <img src="{% static 'image/phone-call.png'%}" alt="call">
+            </a>
+        </div>
+    </main>
     <footer>
         <div class="footer-logo">
             <div class="footer-logo-main">
@@ -108,9 +112,9 @@
             <h2>Сторінки</h2>
             <a href="{% url 'index' %}">Головна</a>
             <a href="{% url 'about' %}">Про нас</a>
-            <a href="{% url 'blog' %}">Блог</a>
+            <a href="{% url 'blog' %}">Корисні статті</a>
             <a href="{% url 'for_therapist' %}">Терапевтам</a>
-            <a href="{% url 'help_center' %}">Центри допомоги</a>
+            <a href="{% url 'help_center' %}">Події та центри допомоги</a>
         </div>
 
         <div class="footer-rules">
@@ -122,7 +126,7 @@
         <div class="footer-socials">
             <h2>Зв'язатися з нами</h2>
             <a href="mailto:logikasun@gmail.com">logikasun@gmail.com</a>
-            <a href="tel:+380123456789">+38 012 345 67 89</a>
+            <a href="tel:+380964653870">+38 096 465 38 79</a>
             <div class="socials">
                 <a href="#"><img src="{% static 'image/instagram.png'%}" alt="instagram"></a>
                 <a href="#"><img src="{% static 'image/telegram.png'%}" alt="telegram"></a>
@@ -173,7 +177,6 @@
             });
         });
     </script>
-
 </body>
 
 </html>

@@ -9,17 +9,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <link rel="stylesheet" href="{% static 'css/article.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
 
-    <title>MindCore - Про нас</title>
+    <title>MindCore - Стаття</title>
     <link rel="icon" type="image/x-icon" href="{% static '/image/logo-2.ico' %}">
 
 </head>
 
 <body>
+
     <nav class="navbar">
         <div class="logo">
             <img src="{% static 'image/logo2.svg' %}" alt="logo">
@@ -39,50 +40,38 @@
     </nav>
 
     <main>
-        <section class="about">
-            <div class="about-header">
-                <h2>Про MindCore</h2>
-                <p>Ми допомагаємо людям знаходити психотерапевтів, які їх розуміють, і підтримуємо ментальне здоров’я.
-                </p>
+        <section class="article">
+            <div class="article-header">
+                <h1>Як обрати психотерапевта: 5 ключових порад</h1>
+                <p class="article-meta">Опубліковано: 30 квітня 2025</p>
             </div>
-            <div class="about-mission">
-                <div class="mission-text">
-                    <h3>Наша місія</h3>
-                    <p>Ми прагнемо зробити психотерапію доступною, зрозумілою та комфортною для кожної людини, незалежно
-                        від її життєвих
-                        обставин. Платформа MindCore створена для того, щоб ви могли легко й швидко знайти фахового,
-                        перевіреного спеціаліста,
-                        що справді розуміє ваші потреби.</p>
-                    <p> Ми віримо, що турбота про ментальне здоров’я — це не розкіш, а необхідність. Саме тому ми
-                        об’єднуємо професіоналів,
-                        сучасні інструменти та зручний онлайн-сервіс, щоб підтримка була поряд саме тоді, коли вона
-                        найбільше потрібна.
-                        З MindCore ви не самі. Ми поруч — щоб допомогти вам зробити перший крок до внутрішньої
-                        рівноваги, відновлення та нового етапу вашого життя.</p>
-                </div>
-                <div class="mission-image">
-                    <img src="{% static 'image/about2.png' %}" alt="Our Mission">
-                </div>
+            <div class="article-image">
+                <img src="{% static 'image/1.png' %}" alt="Article Image">
             </div>
-            <div class="about-team">
-                <h3>Наша команда</h3>
-                <div class="team-container">
-                    <article class="team-member">
-                        <img src="{% static 'image/me3.png' %}" alt="Team Member 1">
-                        <h4>Софія Костерева</h4>
-                        <p>Засновник та CEO</p>
-                    </article>
-                    <article class="team-member">
-                        <img src="{% static 'image/psychologist.png' %}" alt="Team Member 2">
-                        <h4>Анна Коваленко</h4>
-                        <p>Головний психолог</p>
-                    </article>
-                    <article class="team-member">
-                        <img src="{% static 'image/manager.png' %}" alt="Team Member 3">
-                        <h4>Наталія Древко</h4>
-                        <p>Менеджер з підтримки клієнтів</p>
-                    </article>
-                </div>
+            <div class="article-content">
+                <p>Вибір психотерапевта – це важливий крок на шляху до ментального здоров’я. Ось п’ять ключових порад,
+                    які
+                    допоможуть вам знайти спеціаліста, який дійсно вам підійде:</p>
+                <h2>1. Визначте свої потреби</h2>
+                <p>Перш ніж почати пошук, подумайте, які проблеми ви хочете вирішити. Це може бути тривожність,
+                    депресія,
+                    сімейні конфлікти чи щось інше. Чітке розуміння ваших потреб допоможе звузити коло спеціалістів.</p>
+                <h2>2. Перевірте кваліфікацію</h2>
+                <p>Переконайтеся, що психотерапевт має відповідну освіту та ліцензію. На платформі MindCore ми
+                    перевіряємо
+                    всіх спеціалістів, щоб ви могли бути впевнені в їхній компетентності.</p>
+                <h2>3. Зверніть увагу на метод терапії</h2>
+                <p>Різні терапевти використовують різні підходи, такі як когнітивно-поведінкова терапія, психоаналіз чи
+                    гештальт-терапія. Дізнайтесь, який метод вам ближчий.</p>
+                <h2>4. Оцініть комфорт спілкування</h2>
+                <p>Важливо, щоб ви відчували себе комфортно з терапевтом. Перша сесія часто допомагає зрозуміти, чи
+                    підходить вам стиль спілкування спеціаліста.</p>
+                <h2>5. Зважте на логістику</h2>
+                <p>Подумайте про формат сесій (онлайн чи офлайн), графік та бюджет. MindCore пропонує зручний пошук, щоб
+                    ви
+                    могли знайти терапевта, який відповідає вашим можливостям.</p>
+                <p>Зробіть перший крок до кращого ментального здоров’я з MindCore!</p>
+                <a href="{% url 'blog' %}" class="article-back">Назад до блогу</a>
             </div>
         </section>
     </main>

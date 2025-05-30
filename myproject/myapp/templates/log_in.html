@@ -1,30 +1,59 @@
+{# templates/log_in.html #}
 {% load static %}
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Вхід</title>
+    <link rel="icon" type="image/x-icon" href="{% static '/image/logo-2.ico' %}">
+
     <link rel="stylesheet" href="{% static 'css/log_in.css' %}">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
+
 <body>
+
+    <div class="return">
+        <a href="{% url 'index' %}">← До головної</a>
+    </div>
+
     <div class="login-container">
-        <h2>Вхід</h2>
+        <h2 class="login-title">Вхід</h2>
         <form method="POST" action="{% url 'log_in' %}">
             {% csrf_token %}
             <div class="input-group">
-                <i class='bx bx-user'></i>
+                <i class="bx bx-user"></i>
                 <input type="text" name="username" placeholder="Логін" required>
             </div>
             <div class="input-group">
-                <i class='bx bx-lock'></i>
-                <input type="password" name="password" placeholder="Пароль" required>
+                <i class="bx bx-lock"></i>
+                <input id="password" type="password" name="password" placeholder="Пароль" required>
+                <i class="toggle-password bx bx-show"></i>
             </div>
             <button type="submit" class="btn">Увійти</button>
         </form>
-        <p>Немає акаунта? <a href="{% url 'sign_up' %}">Зареєструватися</a></p>
+        <p class="register-text">
+            Немає акаунта? <a href="{% url 'sign_up' %}">Зареєструватися</a>
+        </p>
     </div>
+    <div class="call">
+        <a href="tel:+380964653870">
+            <img src="{% static 'image/phone-call.png'%}" alt="call">
+        </a>
+    </div>
+    <script>
+        const pwdField = document.getElementById('password');
+        const toggle = document.querySelector('.toggle-password');
+        toggle.addEventListener('click', () => {
+            pwdField.type = pwdField.type === 'password' ? 'text' : 'password';
+            toggle.classList.toggle('bx-show');
+            toggle.classList.toggle('bx-hide');
+        });
+    </script>
 </body>
+
 </html>

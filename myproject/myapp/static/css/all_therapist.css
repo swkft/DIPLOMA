@@ -1,0 +1,176 @@
+
+/* Specialists Section */
+.specialists {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 30px 5%;
+    text-align: center;
+    color: var(--primary);
+}
+
+.specialists h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 20px;
+}
+
+/* Filter Section */
+.filter-section {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--font);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-section select {
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 2px solid var(--light);
+    border-radius: 8px;
+    background-color: var(--font);
+    color: var(--primary);
+    cursor: pointer;
+    width: 100%;
+    max-width: 220px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.filter-section select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 5px rgba(67, 153, 111, 0.3);
+}
+
+.filter-section button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    background-color: var(--primary);
+    color: var(--font);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    width: 100%;
+    max-width: 220px;
+}
+
+.filter-section button:hover {
+    background-color: var(--dark);
+    transform: translateY(-2px);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Specialists Grid */
+.specialists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    justify-items: center;
+}
+
+.specialist-card {
+    background-color: var(--font);
+    border: 2px solid var(--light);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+    width: 100%;
+}
+
+.specialist-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.specialist-img {
+    width: 100%;
+    max-width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.specialist-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.specialist-role {
+    font-size: 1.1rem;
+    color: var(--dark);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.specialist-info {
+    font-size: 0.95rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+    text-align: left;
+    width: 100%;
+}
+
+.specialist-info p {
+    margin: 5px 0;
+}
+
+.specialist-info strong {
+    color: var(--dark);
+}
+
+.specialist-btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: var(--font);
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.specialist-btn:hover {
+    background-color: var(--dark);
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .specialists {
+        margin: 30px 15px;
+        padding: 20px 3%;
+    }
+
+    .specialist-card {
+        max-width: 100%;
+    }
+
+    .filter-section {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .filter-section select,
+    .filter-section button {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .specialists {
+        margin: 30px 15px;
+    }
+}

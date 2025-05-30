@@ -1,52 +1,31 @@
-/********** CSS **********/
 :root {
     --primary: #006747;
-    --p: rgb(0, 103, 71);
-    --font:#e8f3e7;
-    --f: #dff5dc;
-    --f:rgba(98, 114, 141, 0.5);
+    --font: #e8f3e7;
     --light: #43996f;
-    --l: rgb(67, 153, 111);
     --dark: #1a3f37;
-    
+    --error: #ff4c4c;
 }
 
-*{
-    margin: 0px;
-    padding: 0px;
+
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
 
-.onest {
-    font-family: "Onest", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-}
-
 body {
     background-color: var(--font);
-    font-family: "Onest",
-        serif;
+    font-family: "Onest", serif;
     font-size: 16px;
     line-height: 1.5;
-    padding-top: 60px;
-            /* Встановіть висоту вашої навігації */
 }
 
-.logo{
-    display: flex;
-    align-items: center;
-    color: var(--primary);
-    flex-wrap: wrap;
+main{
+    margin-top: 60px;
 }
 
-.logo img{
-    max-width: 50px;
-    margin: 5px;
-}
-
+/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
@@ -54,59 +33,155 @@ body {
     width: 100%;
     z-index: 1000;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     background-color: var(--font);
-    padding: 0px 10%;
+    padding: 0px 5%;
+    gap: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: var(--primary);
+    gap: 10px;
+}
+
+.logo img {
+    max-width: 50px;
 }
 
 .navbar-menu {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    gap: 15px;
 }
 
-.navbar-menu a{
-    margin: 5px;
+.navbar-menu a {
     color: var(--primary);
     text-decoration: none;
     font-weight: 700;
+    transition: color 0.3s;
 }
 
 .navbar-menu a:hover {
     color: var(--light);
-    transition: 0.5s;
 }
 
-.navbar-person{
+.navbar-person {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 10px;
+    gap: 10px;
 }
 
-.navbar-person a{
-    margin: 5px;
+.navbar-person a {
     color: var(--font);
     text-decoration: none;
-    background-color: var(--primary);    
+    background-color: var(--primary);
     font-weight: 700;
-    text-decoration: none;
     padding: 10px 20px;
     border-radius: 5px;
-    width: 200px;
     text-align: center;
+    transition: background-color 0.3s;
 }
 
-.navbar-person a:hover{
+.navbar-person a:hover {
     background-color: var(--dark);
-    transition: 0.5s;
 }
 
+/* User Dropdown Menu */
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.user-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--font);
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.user-dropdown-content a {
+    color: var(--primary);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.user-dropdown-content a:hover {
+    background-color: var(--light);
+    color: var(--font);
+}
+
+.user-dropdown:hover .user-dropdown-content {
+    display: block;
+}
+
+/* Ensure dropdown aligns with navbar */
+.navbar-person {
+    display: flex;
+    align-items: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .user-dropdown {
+        width: 100%;
+    }
+
+    .user-dropdown-content {
+        width: 100%;
+        left: 0;
+    }
+}
+
+/* Hello Section */
 .hello {
     display: flex;
     border-bottom: 1px solid var(--light);
+}
+
+.hello-left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--light);
+    color: var(--font);
+    padding: 20px;
+}
+
+.hello-text {
+    max-width: 80%;
+    font-size: clamp(1.4rem, 3vw, 1.5rem);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hello-button {
+    display: flex;
+    gap: 10px;
+}
+
+.hello-button a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: var(--font);
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.hello-button a:hover {
+    background-color: var(--dark);
 }
 
 .hello-right {
@@ -115,123 +190,71 @@ body {
 
 .hello-right img {
     width: 100%;
-}
-
-.hello-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 50%;
-    background-color: var(--light);
-    color: var(--font);
-    padding: 20px;
-}
-
-.hello-text {
-    max-width: 60%;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.hello-button {
-    display: flex;
-    gap: 10px;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
-.hello-button a {
     display: block;
-    text-decoration: none;
-    padding: 10px 20px;
-    background-color: var(--primary);
-    color: var(--font);
-    border-radius: 5px;
-    width: 200px;
-    /* Фіксована ширина кнопок */
-    text-align: center;
 }
 
-.hello-button a:hover{
-    background-color: var(--dark);
-    transition: 0.5s;
-}
-
+/* Opportunity Section */
 .opportunity {
-    padding: 100px 10%;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 50px;
+    max-width: 1200px;
+    padding: 50px 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    margin: 0px auto;
 }
 
 .opportunity article {
-    width: 20%;
     aspect-ratio: 1;
     text-align: center;
     color: var(--font);
     background-color: var(--light);
     border-radius: 50%;
-    box-shadow: 0 0 15px 20px var(--light);
+    box-shadow: 0 0 15px 10px var(--light);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    gap: 10px;
+    min-width: 90%;
+    max-width: 90%;
+    
 }
 
 .opportunity article h2 {
-    font-size: 2.5rem;
-    animation: countUp 3s ease-out forwards;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
 }
 
-@keyframes countUp {
-    0% {
-        transform: scale(0.5);
-        /* Початковий розмір */
-        opacity: 0;
-    }
-
-    100% {
-        transform: scale(1);
-        /* Кінцевий розмір */
-        opacity: 1;
-    }
+.opportunity article p {
+    width: 80%;
 }
 
-@media screen and (max-width: 768px) {
-    .opportunity article {
-        width: 45%;
-        /* Можна змінювати розмір для мобільних пристроїв */
-    }
-}
-
+/* SOS Section */
 .sos {
-    margin: 0px 10%;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    justify-items: center;
+    padding: 30px 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
     background-color: var(--primary);
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     color: var(--font);
-    margin-bottom: 50px;
     text-align: center;
 }
 
+.sos h2 {
+    grid-column: 1 / -1;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
 .sos article {
-    width: 22%;
-    min-width: 200px;
     padding: 20px;
     border: 3px solid var(--light);
     border-radius: 15px;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s;
 }
 
 .sos article:hover {
@@ -252,66 +275,50 @@ body {
     background-color: var(--light);
     padding: 10px;
     border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
     margin-top: 10px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .sos a:hover {
-    background: rgba(67, 153, 111, 0.5);
+    background-color: rgba(67, 153, 111, 0.5);
     transform: translateY(-2px);
 }
 
-.sos h2{
-    width: 100%;
-}
-
-@media screen and (max-width: 768px) {
-    .sos {
-        flex-direction: column;
-        align-items: center;
-        padding: 30px 10px;
-    }
-
-    .sos article {
-        width: 90%;
-        text-align: center;
-    }
-}
-
+/* Footer */
 footer {
     display: flex;
     justify-content: space-around;
     background-color: var(--dark);
     color: var(--font);
-    padding: 20px 10%;
+    padding: 25px 10%;
     flex-wrap: wrap;
 }
 
-footer div{
+footer div {
     gap: 10px;
     width: 25%;
     min-width: 220px;
 }
 
-.footer-logo{
+.footer-logo {
     display: block;
 }
 
-.footer-logo-main{
+.footer-logo-main {
     display: flex;
-    gap: 20px;
-    margin-bottom: 10px;
+    gap: 10px;
+    margin-bottom: 0px;
     align-items: center;
 }
 
-.footer-logo img{
+.footer-logo img {
     width: 50%;
     border-radius: 50%;
 }
 
-.footer-info{
+.footer-info {
     font-size: 16px;
-    margin-top: 20px;
+    margin-top: 0px;
     display: block;
     width: 100%;
 }
@@ -331,22 +338,22 @@ footer a:hover {
     transition: 0.5s;
 }
 
-.footer-pages{
+.footer-pages {
     display: flex;
     flex-direction: column;
 }
 
-.footer-rules{
+.footer-rules {
     display: flex;
     flex-direction: column;
 }
 
-.footer-socials{
+.footer-socials {
     display: flex;
     flex-direction: column;
 }
 
-.socials{
+.socials {
     display: inline;
 }
 
@@ -361,8 +368,94 @@ footer a:hover {
     transition: 1s;
 }
 
-.footer-author{
+.footer-author {
     display: block;
     font-size: 16px;
     margin: 10px auto 0px auto;
+}
+
+.call{
+    position: fixed;
+    max-width: 70px;
+    bottom: 30px;
+    right: 30px;
+}
+
+.call img{
+    width: 100%;
+}
+
+.call:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.help{
+    text-align: center;
+    color: var(--primary);
+    margin: 20px;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        position: static;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 5%;
+    }
+
+    .body{
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+
+    .navbar-menu {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .navbar-person {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar-person a {
+        width: 100%;
+    }
+
+    .hello {
+        flex-direction: column;
+    }
+
+    .hello-left,
+    .hello-right {
+        width: 100%;
+    }
+
+    .hello-text {
+        max-width: 90%;
+    }
+
+    .hello-button {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hello-button a {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .sos{
+        margin: 30px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .sos{
+        margin: 30px;
+    }
 }

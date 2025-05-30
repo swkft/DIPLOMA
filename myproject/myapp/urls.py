@@ -9,5 +9,11 @@ urlpatterns = [
     path('blog/', views.blog, name='blog'),
     path('for_therapist/', views.for_therapist, name='for_therapist'),
     path('help_center/', views.help_center, name='help_center'),
+    path('article/', views.article, name='article'),
+    path('all_therapist/', views.all_therapist, name='all_therapist'),
+    path('user/', views.user, name='user'),
+    path('therapist/', views.therapist, name='therapist'),
+
+
 
 ]

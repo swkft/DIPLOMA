@@ -1,11 +1,56 @@
+{# templates/log_in.html #}
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Вхід</title>
+    <link rel="icon" type="image/x-icon" href="{% static '/image/logo-2.ico' %}">
+
+    <link rel="stylesheet" href="{% static 'css/log_in.css' %}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
+
 <body>
-    
+
+    <div class="return">
+        <a href="{% url 'index' %}">← До головної</a>
+    </div>
+
+    <div class="login-container">
+        <h2 class="login-title">Вхід</h2>
+        <form method="POST" action="{% url 'log_in' %}">
+            {% csrf_token %}
+            <div class="input-group">
+                <i class="bx bx-user"></i>
+                <input type="text" name="username" placeholder="Логін" required>
+            </div>
+            <div class="input-group">
+                <i class="bx bx-lock"></i>
+                <input id="password" type="password" name="password" placeholder="Пароль" required>
+                <i class="toggle-password bx bx-show"></i>
+            </div>
+            <button type="submit" class="btn">Увійти</button>
+        </form>
+        <p class="register-text">
+            Хочеш стати частиною нашої команди? <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSf7zqHsL1oL86ggLDIpyqucAiSzVbW-CKxWQ51HPyYiixaH_Q/viewform?usp=sharing&ouid=106170175946969662247">Подати
+                заявку</a>
+        </p>
+    </div>
+    <script>
+        const pwdField = document.getElementById('password');
+        const toggle = document.querySelector('.toggle-password');
+        toggle.addEventListener('click', () => {
+            pwdField.type = pwdField.type === 'password' ? 'text' : 'password';
+            toggle.classList.toggle('bx-show');
+            toggle.classList.toggle('bx-hide');
+        });
+    </script>
 </body>
+
 </html>

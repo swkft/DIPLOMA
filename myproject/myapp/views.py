@@ -32,3 +32,17 @@ def for_therapist(request):
 
 def help_center(request):
     return render(request, "help_center.html")
+
+
+def article(request):
+    return render(request, "article.html")
+
+
+def all_therapist(request):
+    return render(request, "all_therapist.html")
+
+def user(request):
+    return render(request, "user.html")
+
+def therapist(request):
+    return render(request, "therapist.html")

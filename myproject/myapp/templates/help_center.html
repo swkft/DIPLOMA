@@ -1,11 +1,215 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/help_center.css' %}">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+
+    <title>MindCore - Центри допомоги</title>
+    <link rel="icon" type="image/x-icon" href="{% static '/image/logo-2.ico' %}">
+
 </head>
+
 <body>
-    
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{% static 'image/logo2.svg' %}" alt="logo">
+            <h1>Mindcore</h1>
+        </div>
+        <div class="navbar-menu">
+            <a href="{% url 'index' %}">Головна</a>
+            <a href="{% url 'about' %}">Про нас</a>
+            <a href="{% url 'blog' %}">Корисні статті</a>
+            <a href="{% url 'for_therapist' %}">Терапевтам</a>
+            <a href="{% url 'help_center' %}">Події та центри допомоги</a>
+        </div>
+        <div class="navbar-person">
+            <a href="{% url 'sign_up' %}">Зареєструватися</a>
+            <a href="{% url 'log_in' %}">Увійти</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="events">
+            <h2>Події та семінари</h2>
+            <div class="events-grid">
+                <article class="event-card">
+                    <h3>Вебінар: Управління стресом</h3>
+                    <p class="event-date"><strong>Дата:</strong> 10.06.2025, 18:00</p>
+                    <p class="event-desc">Дізнайтесь про техніки самодопомоги для подолання стресу в умовах війни.</p>
+                    <a href="https://example.com/register" class="event-btn" target="_blank">Зареєструватися</a>
+                </article>
+                <article class="event-card">
+                    <h3>Семінар: ПТСР та відновлення</h3>
+                    <p class="event-date"><strong>Дата:</strong> 15.06.2025, 14:00</p>
+                    <p class="event-desc">Практичні поради від психологів для ветеранів та ВПО.</p>
+                    <a href="https://example.com/register" class="event-btn" target="_blank">Зареєструватися</a>
+                </article>
+                <article class="event-card">
+                    <h3>Групова терапія: Соціальна адаптація</h3>
+                    <p class="event-date"><strong>Дата:</strong> 20.06.2025, 16:00</p>
+                    <p class="event-desc">Сесія для тих, хто втратив соціальні зв’язки через війну.</p>
+                    <a href="https://example.com/register" class="event-btn" target="_blank">Зареєструватися</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="help-centers">
+            <h2>Центри психологічної допомоги</h2>
+            <div class="centers-grid">
+                <article class="center-card">
+                    <h3>Львівський центр здоров’я</h3>
+                    <p class="center-address"><strong>Адреса:</strong> вул. Шевченка, 10, Львів</p>
+                    <p class="center-phone"><strong>Телефон:</strong> <a href="tel:+380322345678">+38 032 234 56 78</a>
+                    </p>
+                    <p class="center-hours"><strong>Графік роботи:</strong> Щоденно, уточнюйте за телефоном</p>
+
+                    <div class="center-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2573.1234567890123!2d24.029716315694123!3d49.83968397939512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add7c1b0c6e0d%3A0x7b3e0e6c6e0c6e0d!2sShevchenka%20St%2C%2010%2C%20Lviv%2C%20Ukraine!5e0!3m2!1sen!2sus!4v1697041234568!5m2!1sen!2sus"
+                            width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </article>
+                <article class="center-card">
+                    <h3>Міський центр підтримки ВПО</h3>
+                    <p class="center-address"><strong>Адреса:</strong> вул. Костя Левицького, 67, Львів</p>
+                    <p class="center-phone"><strong>Телефон:</strong> <a href="tel:+380505554461">+38 050 555 44
+                            61</a></p>
+                    <p class="center-hours"><strong>Графік роботи:</strong> Пн–Чт: 9:00–18:00, Пт: 9:00–16:00</p>
+                    <div class="center-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2573.1234567890123!2d24.032716315694123!3d49.84268397939512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sKostia%20Levytskoho%20St%2C%2067%2C%20Lviv%2C%20Ukraine!5e0!3m2!1sen!2sus!4v1697041234569!5m2!1sen!2sus"
+                            width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </article>
+
+                <article class="center-card">
+                    <h3>Центр підтримки на вул. Князя Романа</h3>
+                    <p class="center-address"><strong>Адреса:</strong> вул. Князя Романа, 6, Львів</p>
+                    <p class="center-phone"><strong>Телефон:</strong> <a href="tel:+380322546079">+38 032 254 60
+                            79</a></p>
+                    <p class="center-hours"><strong>Графік роботи:</strong> 10:00–20:00</p>
+                    <div class="center-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2573.1234567890123!2d24.029716315694123!3d49.83968397939512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sKniazia%20Romana%20St%2C%206%2C%20Lviv%2C%20Ukraine!5e0!3m2!1sen!2sus!4v1697041234569!5m2!1sen!2sus"
+                            width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </article>
+
+                <article class="center-card">
+                    <h3>Гуманітарний штаб у Львівському палаці мистецтв</h3>
+                    <p class="center-address"><strong>Адреса:</strong> вул. Коперника, 17, Львів</p>
+                    <p class="center-phone"><strong>Телефон:</strong> <a href="tel:+380960000044">+38 096 000 00
+                            44</a></p>
+                    <p class="center-hours"><strong>Графік роботи:</strong> Щоденно, уточнюйте за телефоном</p>
+                    <div class="center-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2573.1234567890123!2d24.026716315694123!3d49.84168397939512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sKopernyka%20St%2C%2017%2C%20Lviv%2C%20Ukraine!5e0!3m2!1sen!2sus!4v1697041234569!5m2!1sen!2sus"
+                            width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </article>
+
+                <article class="center-card">
+                    <h3>Координаційна рада волонтерів та військових</h3>
+                    <p class="center-address"><strong>Адреса:</strong> вул. Короленка, 1-А</p>
+                    <p class="center-phone"><strong>Телефон:</strong> <a href="tel:+380985198920">+38 098 519 89
+                            20</a></p>
+                    <p class="center-hours"><strong>Графік роботи:</strong> Щоденно, уточнюйте за телефоном</p>
+                    <div class="center-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5146.025849230345!2d24.038610275872568!3d49.842214671482424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add6b286fd2bd%3A0x819f3b1aeee4fc0c!2sTarasa%20Bobanycha%20%22Khammera%22%20St%2C%201%2C%20L&#39;viv%2C%20L&#39;vivs&#39;ka%20oblast%2C%20Ukraine%2C%2079000!5e0!3m2!1sen!2sus!4v1748506549008!5m2!1sen!2sus"
+                            width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </article>
+
+                <article class="center-card">
+                    <h3>Карітас Львів УГКЦ, благодійфний фонд</h3>
+                    <p class="center-address"><strong>Адреса:</strong> вул. Волошина, 4, Львів</p>
+                    <p class="center-phone"><strong>Телефон:</strong> <a href="tel:+380322612404">+38 032 261 24
+                            04</a></p>
+                    <p class="center-hours"><strong>Графік роботи:</strong> Пн–Пт: 9:00–17:00</p>
+                    <div class="center-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2573.1234567890123!2d24.030716315694123!3d49.84068397939512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sVoloshyna%20St%2C%204%2C%20Lviv%2C%20Ukraine!5e0!3m2!1sen!2sus!4v1697041234569!5m2!1sen!2sus"
+                            width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <div class="call">
+            <a href="tel:+380964653870">
+                <img src="{% static 'image/phone-call.png'%}" alt="call">
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-logo">
+            <div class="footer-logo-main">
+                <img src="{% static 'image/logo2.svg'%}" alt="logo">
+                <h2>Mindcore</h2>
+            </div>
+            <div class="footer-info">
+                <p>Ми подбаємо про твоє ментальне здоров'я!</p>
+            </div>
+        </div>
+
+        <div class="footer-pages">
+            <h2>Сторінки</h2>
+            <a href="{% url 'index' %}">Головна</a>
+            <a href="{% url 'about' %}">Про нас</a>
+            <a href="{% url 'blog' %}">Корисні статті</a>
+            <a href="{% url 'for_therapist' %}">Терапевтам</a>
+            <a href="{% url 'help_center' %}">Події та центри допомоги</a>
+        </div>
+
+        <div class="footer-rules">
+            <h2>Юридична інформація</h2>
+            <a href="#">Політика конфіденційності</a>
+            <a href="#">Правила користування сайтом</a>
+        </div>
+
+        <div class="footer-socials">
+            <h2>Зв'язатися з нами</h2>
+            <a href="mailto:logikasun@gmail.com">logikasun@gmail.com</a>
+            <a href="tel:+380964653870">+38 096 465 38 70</a>
+            <div class="socials">
+                <a href="#"><img src="{% static 'image/instagram.png'%}" alt="instagram"></a>
+                <a href="#"><img src="{% static 'image/telegram.png'%}" alt="telegram"></a>
+            </div>
+        </div>
+
+        <div class="footer-author">
+            <h4>&copy; 2025 Костерева Софія</h4>
+        </div>
+    </footer>
+    <div class="call">
+        <a href="tel:+380964653870">
+            <img src="{% static 'image/phone-call.png'%}" alt="call">
+        </a>
+    </div>
 </body>
+
 </html>

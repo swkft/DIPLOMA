@@ -1,11 +1,170 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+
+    <title>MindCore - Блог</title>
+    <link rel="icon" type="image/x-icon" href="{% static '/image/logo-2.ico' %}">
+
 </head>
+
 <body>
-    
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{% static 'image/logo2.svg' %}" alt="logo">
+            <h1>Mindcore</h1>
+        </div>
+        <div class="navbar-menu">
+            <a href="{% url 'index' %}">Головна</a>
+            <a href="{% url 'about' %}">Про нас</a>
+            <a href="{% url 'blog' %}">Корисні статті</a>
+            <a href="{% url 'for_therapist' %}">Терапевтам</a>
+            <a href="{% url 'help_center' %}">Події та центри допомоги</a>
+        </div>
+        <div class="navbar-person">
+            <a href="{% url 'sign_up' %}">Зареєструватися</a>
+            <a href="{% url 'log_in' %}">Увійти</a>
+        </div>
+    </nav>
+    <main>
+        <section class="blog">
+            <h2>Корисні статті</h2>
+            <div class="blog-container">
+                <article class="blog-post">
+                    <img src="{% static 'image/1.png' %}" alt="Article 1">
+                    <div class="blog-content">
+                        <h3>Як обрати психотерапевта: 5 ключових порад</h3>
+                        <p>Дізнайтесь, на що звертати увагу при виборі спеціаліста, щоб знайти того, хто дійсно вам
+                            підійде.
+                        </p>
+                        <a href="{% url 'article' %}" class="blog-read-more">Читати далі</a>
+                    </div>
+                </article>
+                <article class="blog-post">
+                    <img src="{% static 'image/2.png' %}" alt="Article 7">
+                    <div class="blog-content">
+                        <h3>Психологічна підтримка для військових: перші кроки</h3>
+                        <p>Дізнайтесь, як військові можуть отримати доступ до психологічної допомоги та чому це важливо.
+                        </p>
+                        <a href="{% url 'article' %}" class="blog-read-more">Читати далі</a>
+                    </div>
+                </article>
+                <article class="blog-post">
+                    <img src="{% static 'image/3.png' %}" alt="Article 8">
+                    <div class="blog-content">
+                        <h3>Як допомогти близьким, які повернулися з війни</h3>
+                        <p>Поради для родин і друзів, як підтримати ветеранів у адаптації до мирного життя.</p>
+                        <a href="{% url 'article' %}" class="blog-read-more">Читати далі</a>
+                    </div>
+                </article>
+                <article class="blog-post">
+                    <img src="{% static 'image/4.png' %}" alt="Article 9">
+                    <div class="blog-content">
+                        <h3>Як зберегти емоційну стабільність в укритті</h3>
+                        <p>Прості техніки для підтримки психологічного здоров’я під час перебування в укритті в умовах
+                            війни.</p>
+                        <a href="{% url 'article' %}" class="blog-read-more">Читати далі</a>
+                    </div>
+                </article>
+                <article class="blog-post">
+                    <img src="{% static 'image/5.png' %}" alt="Article 10">
+                    <div class="blog-content">
+                        <h3>Психологічна реабілітація для ветеранів</h3>
+                        <p>Огляд програм і методів, які допомагають ветеранам відновити ментальне здоров’я після війни.
+                        </p>
+                        <a href="{% url 'article' %}" class="blog-read-more">Читати далі</a>
+                    </div>
+                </article>
+                <article class="blog-post">
+                    <img src="{% static 'image/6.png' %}" alt="Article 11">
+                    <div class="blog-content">
+                        <h3>Як говорити з дітьми про війну</h3>
+                        <p>Поради для батьків, як пояснити дітям ситуацію війни та підтримати їхній емоційний стан.</p>
+                        <a href="{% url 'article' %}" class="blog-read-more">Читати далі</a>
+                    </div>
+                </article>
+                <article class="blog-post">
+                    <img src="{% static 'image/7.png' %}" alt="Article 2">
+                    <div class="blog-content">
+                        <h3>Чому ментальне здоров’я важливе?</h3>
+                        <p>Розбираємо, як турбота про психологічний стан впливає на якість вашого життя.</p>
+                        <a href="{% url 'article' %}" class="blog-read-more">Читати далі</a>
+                    </div>
+                </article>
+                <article class="blog-post">
+                    <img src="{% static 'image/8.png' %}" alt="Article 4">
+                    <div class="blog-content">
+                        <h3>Міфи про психотерапію</h3>
+                        <p>Розвінчуємо популярні стереотипи, які можуть заважати звернутися по допомогу.</p>
+                        <a href="{% url 'article' %}" class="blog-read-more">Читати далі</a>
+                    </div>
+                </article>
+
+                <article class="blog-post">
+                    <img src="{% static 'image/9.png' %}" alt="Article 6">
+                    <div class="blog-content">
+                        <h3>Як впоратися з тривогою під час війни</h3>
+                        <p>Практичні поради для зменшення тривожності в умовах війни, включаючи техніки дихання та
+                            mindfulness.</p>
+                        <a href="{% url 'article' %}" class="blog-read-more">Читати далі</a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-logo">
+            <div class="footer-logo-main">
+                <img src="{% static 'image/logo2.svg' %}" alt="logo">
+                <h2>Mindcore</h2>
+            </div>
+            <div class="footer-info">
+                <p>Ми подбаємо про твоє ментальне здоров'я!</p>
+            </div>
+        </div>
+        <div class="footer-pages">
+            <h2>Сторінки</h2>
+            <a href="{% url 'index' %}">Головна</a>
+            <a href="{% url 'about' %}">Про нас</a>
+            <a href="{% url 'blog' %}">Корисні статті</a>
+            <a href="{% url 'for_therapist' %}">Терапевтам</a>
+            <a href="{% url 'help_center' %}">Події та центри допомоги</a>
+        </div>
+        <div class="footer-rules">
+            <h2>Юридична інформація</h2>
+            <a href="#">Політика конфіденційності</a>
+            <a href="#">Правила користування сайтом</a>
+        </div>
+        <div class="footer-socials">
+            <h2>Зв'язатися з нами</h2>
+            <a href="mailto:logikasun@gmail.com">logikasun@gmail.com</a>
+            <a href="tel:+380964653870">+38 096 465 38 70</a>
+            <div class="socials">
+                <a href="#"><img src="{% static 'image/instagram.png' %}" alt="instagram"></a>
+                <a href="#"><img src="{% static 'image/telegram.png' %}" alt="telegram"></a>
+            </div>
+        </div>
+        <div class="footer-author">
+            <h4>© 2025 Костерева Софія</h4>
+        </div>
+    </footer>
+    <div class="call">
+        <a href="tel:+380964653870">
+            <img src="{% static 'image/phone-call.png'%}" alt="call">
+        </a>
+    </div>
 </body>
+
 </html>
